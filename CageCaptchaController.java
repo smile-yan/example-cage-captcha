@@ -45,7 +45,7 @@ public class CageCaptchaController {
         HttpSession session = request.getSession();
         String str = session.getAttribute("cage_token").toString().trim();
         System.out.println("str=="+str);
-        if(str.equals(code.trim())) {
+        if(str.equals(code.trim())) {//equalsIgnoreCase不区分大小写
             return "SUCCESS";
         }
         return "FAILURE";
